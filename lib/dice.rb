@@ -1,9 +1,19 @@
 class Dice
+    def initialize
+    @total_result = []
+    end 
+  def roll
+    [1, 2, 3, 4, 5, 6].sample
+  end   
 
-    def roll
-        it 'gives a number between 1 and 6 when rolled' do
-            expect(subject.roll).to be_between(1, 6)
-        end 
-    end
+  def number_of_dice(num)
+    num.times { 
+        @total_result << roll 
+    }
+  end 
+  def total_result 
+    @total_result
+  end
+
 end
 
